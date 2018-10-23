@@ -3,6 +3,7 @@
 #include <opencv2/videoio.hpp>
 #include <opencv2/objdetect.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/ml.hpp>
 #include <iostream>
 #include <iomanip>
 using namespace cv;
@@ -46,16 +47,16 @@ int main(int argc, char** argv)
 {
 	// capture from web camera init
 
-	VideoCapture cap(0);
-	cap.open(0);
+	//VideoCapture cap(0);
+	//cap.open(0);
 
 	Mat img;
 
 	// Initialize the inbuilt Harr Cascade frontal face detection
 	// Below mention the path of where your haarcascade_frontalface_alt2.xml file is located
 
-	CascadeClassifier face_cascade;
-	face_cascade.load("C:\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt2.xml");
+	//CascadeClassifier face_cascade;
+	//face_cascade.load("C:\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt2.xml");
 
 	//Detector detector;
 	//Mat frame;
@@ -98,6 +99,12 @@ int main(int argc, char** argv)
 	//		detector.toggleMode();
 	//	}
 	//}
+
+	
+
+
+	//Camera face detection
+	/*
 	for (;;)
 	{
 
@@ -129,13 +136,60 @@ int main(int argc, char** argv)
 		}
 
 		// To draw rectangles around detected faces
-	   /* for (unsigned i = 0; i<faces.size(); i++)
-				   rectangle(img,faces[i], Scalar(255, 0, 0), 2, 1);*/
+	    //for (unsigned i = 0; i<faces.size(); i++)
+				   //rectangle(img,faces[i], Scalar(255, 0, 0), 2, 1);
 
 
 		imshow("Computer Vision", img);
 		int key2 = waitKey(20);
 
+	}*/
+
+
+
+	/*
+	vector<String> fn; 
+	string path = "C:/Users/Serenity/Desktop/UMBC HW/AI/planesnet/*.png";
+	glob(path, fn, false);
+	
+	int i = 0;
+	img = imread(fn.front(), CV_LOAD_IMAGE_GRAYSCALE);
+	namedWindow("testies", WINDOW_NORMAL);
+	resizeWindow("testies", 500,500);
+	for (;;)
+	{
+		
+		cout << i << "\n" << fn[i] << "\n";
+		imshow("testies", img);
+		int key2 = waitKey(20);
+		i++;
+		if (i>fn.size()-1) 
+		{
+			i = fn.size()-1;
+		}
+		img = imread(fn[i], CV_LOAD_IMAGE_GRAYSCALE);
+		
+	}*/
+
+	CascadeClassifier plane_classifier;
+	plane_classifier.load("C:/Users/Serenity/Desktop/UMBC HW/AI/cascade/cascade.xml");
+	img = imread("C:/Users/Serenity/Desktop/UMBC HW/AI/test3.png", CV_LOAD_IMAGE_ANYDEPTH);
+	for (;;)
+	{
+		
+		vector<Rect> planes;
+		plane_classifier.detectMultiScale(img, planes, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, Size(140, 140));
+		for (int i = 0; i < planes.size(); i++)
+		{
+			Point center(planes[i].x + planes[i].width*0.5, planes[i].y + planes[i].height*0.5);
+			ellipse(img, center, Size(planes[i].width*0.5, planes[i].height*0.5), 0, 0, 360, Scalar(255, 0, 255), 4, 8, 0);
+		}
+
+		imshow("test", img);
+		int key3 = waitKey(30);
 	}
+	
 	return 0;
 }
+
+
