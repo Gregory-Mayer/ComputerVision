@@ -1,0 +1,2 @@
+opencv_createsamples -vec tdata.vec -info pos.txt -w 20 -h 20
+opencv_traincascade -data cascade -vec tdata.vec -bg neg.txt -w 20 -h 20 -numPos 800 -numNeg 1000 -acceptanceRatioBreakValue 10e-5
