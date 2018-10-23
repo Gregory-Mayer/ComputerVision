@@ -172,13 +172,13 @@ int main(int argc, char** argv)
 	}*/
 
 	CascadeClassifier plane_classifier;
-	plane_classifier.load("C:/Users/Serenity/Desktop/UMBC HW/AI/cascade/cascade.xml");
-	img = imread("C:/Users/Serenity/Desktop/UMBC HW/AI/test3.png", CV_LOAD_IMAGE_ANYDEPTH);
-	for (;;)
-	{
+	plane_classifier.load("C:/Users/arrastador/Documents/GitHub/ComputerVision/landons junk folder/cascade/cascade.xml");
+	img = imread("C:/Users/arrastador/Documents/GitHub/ComputerVision/landons junk folder/test6.jpg", CV_LOAD_IMAGE_ANYDEPTH);
+	//for (;;)
+	//{
 		
 		vector<Rect> planes;
-		plane_classifier.detectMultiScale(img, planes, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, Size(140, 140));
+		plane_classifier.detectMultiScale(img, planes, 1.1, 3, 0 | CV_HAAR_SCALE_IMAGE, Size(1, 1));
 		for (int i = 0; i < planes.size(); i++)
 		{
 			Point center(planes[i].x + planes[i].width*0.5, planes[i].y + planes[i].height*0.5);
@@ -187,7 +187,8 @@ int main(int argc, char** argv)
 
 		imshow("test", img);
 		int key3 = waitKey(30);
-	}
+	//}
+	imwrite("C:/Users/arrastador/Documents/GitHub/ComputerVision/results/Results.jpg", img);
 	
 	return 0;
 }
