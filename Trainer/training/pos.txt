@@ -1,0 +1,1 @@
+./training/pos/f35.jpg 1 0 0 9b d4
