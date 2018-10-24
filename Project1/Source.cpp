@@ -172,8 +172,8 @@ int main(int argc, char** argv)
 	}*/
 
 	CascadeClassifier plane_classifier;
-	plane_classifier.load("C:/Users/arrastador/Documents/GitHub/ComputerVision/landons junk folder/cascade/cascade.xml");
-	img = imread("C:/Users/arrastador/Documents/GitHub/ComputerVision/landons junk folder/test6.jpg", CV_LOAD_IMAGE_ANYDEPTH);
+	plane_classifier.load("/ComputerVision/landons junk folder/cascade/cascade.xml");
+	img = imread("/ComputerVision/landons junk folder/test6.jpg", CV_LOAD_IMAGE_ANYDEPTH);
 	//for (;;)
 	//{
 		
@@ -188,7 +188,7 @@ int main(int argc, char** argv)
 		imshow("test", img);
 		int key3 = waitKey(30);
 	//}
-	imwrite("C:/Users/arrastador/Documents/GitHub/ComputerVision/results/Results.jpg", img);
+	imwrite("/ComputerVision/results/Results.jpg", img);
 	
 	return 0;
 }
