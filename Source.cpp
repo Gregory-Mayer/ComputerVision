@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 	CascadeClassifier plane_classifier;
 	
 	//loads the cascade into the program
-	plane_classifier.load("resources/cascade/cascade.xml");
+	plane_classifier.load("resources/cascade/final_cascade.xml");
 	
 	//fileName = "resources/test6.jpg";
 	img = imread(fileName, CV_LOAD_IMAGE_COLOR);
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 		
 		vector<Rect> planes;
 		//this detects the object in the image. takes in the img, cascade, scale Factor, nearest neighbor, flags, min size, and max size
-		plane_classifier.detectMultiScale(img, planes, 1.1, 8, 0, Size(0.1, 0.1), Size(25, 25));
+		plane_classifier.detectMultiScale(img, planes, 1.01, 50, 0, Size(0.1, 0.1), Size(25, 25));
 		
 		//loops through and marks the planes on the image
 		for (int i = 0; i < planes.size(); i++)
@@ -86,7 +86,7 @@ int main(int argc, char** argv)
 		rectangle(img, noFly, Scalar(0, 0, 255), 5);
 		imshow("test", img);
 		//saves the results of the image to a different file so that can be viewed without altering the original image
-		imwrite("results/Results.jpg", img);
+		imwrite("results/final_results.jpg", img);
 		int key3 = waitKey(0);
 	//}
 		//cout << "test1" << endl;
