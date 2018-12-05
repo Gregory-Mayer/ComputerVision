@@ -54,11 +54,4 @@ make -j4
 sudo make install
 sudo ldconfig
 
-# 4. INSTALL THE APPLICATION
-
-#wget https://github.com/Gregory-Mayer/ComputerVision/archive/${OPENCV_VERSION}.zip
-#unzip ${OPENCV_VERSION}.zip
-#rm ${OPENCV_VERSION}.zip
-#mv opencv-${OPENCV_VERSION} OpenCV
-
 
