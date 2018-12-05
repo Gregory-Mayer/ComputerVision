@@ -3,3 +3,26 @@
 ################################################################################
 
 *.enc
+*.tlog
+*.log
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/Project1/v15/Solution.VC.db-wal
+/.vs/Project1/v15/Solution.VC.db-shm
+/.vs/Project1/v15/Solution.VC.db
+/.vs/Project1/v15/ipch/AutoPCH/7d021201af66b3f2/SOURCE.ipch
+/.vs/Project1/v15/ipch/AutoPCH/7d021201af66b3f2
+/.vs/Project1/v15/ipch/AutoPCH/5ef05dc576c35c59/SOURCE.ipch
+/.vs/Project1/v15/ipch/AutoPCH/5ef05dc576c35c59
+/.vs/Project1/v15/ipch/AutoPCH/265f7e8f8f5ac4d2/SOURCE.ipch
+/.vs/Project1/v15/ipch/AutoPCH/265f7e8f8f5ac4d2
+/.vs/Project1/v15/ipch/AutoPCH
+/.vs/Project1/v15/Browse.VC.opendb
+/.vs/Project1/v15/Browse.VC.db
+/.vs/Project1/v15/.suo
+/.vs/Project1/v15
+/.vs/ComputerVision/v15/ipch/AutoPCH/7d8f81cb03ef71eb/SOURCE.ipch
+/.vs/ComputerVision/v15/Browse.VC.db
+/.vs/ComputerVision/v15/.suo
+/Project1/Release/vc141.pdb

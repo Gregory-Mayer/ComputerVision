@@ -1,10 +1,20 @@
 ﻿  Source.cpp
-c:\users\serenity\source\repos\computervision\project1\source.cpp(184): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+c:\users\serenity\source\repos\computervision\project1\source.cpp(88): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=int
           ]
-c:\users\serenity\source\repos\computervision\project1\source.cpp(185): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+c:\users\serenity\source\repos\computervision\project1\source.cpp(93): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\serenity\source\repos\computervision\project1\source.cpp(95): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+c:\users\serenity\source\repos\computervision\project1\source.cpp(98): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
           with
           [
               _Tp=int
